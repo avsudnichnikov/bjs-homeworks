@@ -1,8 +1,6 @@
 function getSolutions(a, b, c) {
     const d = b ** 2 - 4 * a * c;
-
     const roots = [];
-
     if (d >= 0) {
         const x1 = (-b + Math.sqrt(d)) / 2 / a;
         roots.push(x1);
@@ -11,7 +9,6 @@ function getSolutions(a, b, c) {
         const x2 = (-b - Math.sqrt(d)) / 2 / a;
         roots.push(x2);
     }
-
     return {D: d, roots: roots};
 }
 
@@ -35,8 +32,7 @@ function showSolutionsMessage(a, b, c) {
 function getAverageScore(data) {
     const result = {};
     for (let lesson in data) {
-        let average = getAverageMark(data[lesson]);
-        result[lesson] = average;
+        result[lesson] = getAverageMark(data[lesson]);
     }
     result.average = getAverageMark(Object.values(result));
     return result;
@@ -47,7 +43,6 @@ function getAverageMark(marks) {
     for (let i = 0; i < marks.length; i += 1) {
         sum = sum + marks[i];
     }
-
     return sum / marks.length || 0;
 }
 

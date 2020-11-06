@@ -9,16 +9,17 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
     if (isNaN(Number(amount))) {
         return 'Неверно указан параметр "Общая стоимость"';
     }
-    if (new Date(date).getFullYear() < new Date().getFullYear()) {
+    if (new Date(date) <= new Date()) {
         return 'Неверно указан параметр "Дата окончания"';
     }
 
     const deltaMonth = new Date(date).getMonth() - new Date().getMonth();
     const deltaYear = new Date(date).getFullYear() - new Date().getFullYear();
-
     const paymentPeriod = 12 * deltaYear + deltaMonth;
+
     const creditBody = amount - contribution;
     const monthlyGrowth = percent / 1200;
+
     const monthlyPayment = creditBody * monthlyGrowth * (1 + 1 / (((1 + monthlyGrowth) ** paymentPeriod) - 1));
 
     const totalPayment = Number((monthlyPayment * paymentPeriod).toFixed(2));

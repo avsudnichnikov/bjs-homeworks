@@ -18,7 +18,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
     const paymentPeriod = 12 * deltaYear + deltaMonth;
 
     const creditBody = amount - contribution;
-    const monthlyGrowth = percent / 1200;
+    const monthlyGrowth = percent / 12 / 100;
 
     const monthlyPayment = creditBody * monthlyGrowth * (1 + 1 / (((1 + monthlyGrowth) ** paymentPeriod) - 1));
 

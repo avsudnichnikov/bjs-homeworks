@@ -36,7 +36,7 @@ function checkBirthday(birthdayTimestamp) {
     leapYearsDays -= ((nowLeapYear === nowYear) && (now.getMonth() < 2)) ? 1 : 0;
     leapYearsDays -= ((birthdayLeapYear === birthdayYear) && (birthday.getMonth() > 1)) ? 1 : 0;
 
-    let diff = (now - birthday);
+    const diff = (now - birthday);
 
     const age = Math.floor(diff / 1000 / 3600 / 24 - leapYearsDays - 1) / 365;
 

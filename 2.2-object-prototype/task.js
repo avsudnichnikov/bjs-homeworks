@@ -37,7 +37,6 @@ function checkBirthday(birthdayTimestamp) {
     leapYearsDays -= ((birthdayLeapYear === birthdayYear) && (birthday.getMonth() > 1)) ? 1 : 0;
 
     const diff = (now - birthday);
-
     const age = Math.floor(diff / 1000 / 3600 / 24 - leapYearsDays - 1) / 365;
 
     return age >= 18;

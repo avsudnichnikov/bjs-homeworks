@@ -97,16 +97,15 @@ myLibrary.addBook(new FantasticBook("Аркадий и Борис Стругац
 myLibrary.addBook(new NovelBook("Герберт Уэллс", "Машина времени", 1895, 138));
 myLibrary.addBook(new Magazine("Мурзилка", 1924, 60));
 myLibrary.addBook(new Book("Александр Сергеевич Пушкин", "Сказки", 1919, 123));
+
 console.log(myLibrary.books);
 console.log(myLibrary.findBookBy('releaseDate', 1919));
+
 const takingBook = myLibrary.giveBookByName('Пикник на обочине');
 console.log(takingBook);
 console.log(myLibrary.books);
-takingBook.state = 20;
-console.log(takingBook.state);
+takingBook.state = 30;
 myLibrary.addBook(takingBook);
-console.log(myLibrary.addBook(takingBook));
-takingBook.fix();
 console.log(myLibrary.addBook(takingBook));
 takingBook.fix();
 console.log(myLibrary.addBook(takingBook));

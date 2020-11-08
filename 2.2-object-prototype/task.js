@@ -32,9 +32,9 @@ function checkBirthday(birthdayTimestamp) {
     const nowLeapYear = Math.floor(nowYear / 4) * 4;
     const birthdayLeapYear = Math.ceil(birthdayYear / 4) * 4;
 
-    let leapYearsDays = (nowLeapYear - birthdayLeapYear) / 4 - 1;
-    leapYearsDays += ((nowLeapYear === nowYear) && (now.getMonth() > 1)) ? 1 : 0;
-    leapYearsDays += ((birthdayLeapYear === birthdayYear) && (birthday.getMonth() < 2)) ? 1 : 0;
+    let leapYearsDays = (nowLeapYear - birthdayLeapYear) / 4 + 1;
+    leapYearsDays -= ((nowLeapYear === nowYear) && (now.getMonth() < 2)) ? 1 : 0;
+    leapYearsDays -= ((birthdayLeapYear === birthdayYear) && (birthday.getMonth() > 1)) ? 1 : 0;
 
     let diff = (now - birthday);
 

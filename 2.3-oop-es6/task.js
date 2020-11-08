@@ -91,6 +91,27 @@ class Library {
     }
 }
 
+const myLibrary = new Library('Моя библиотека');
+myLibrary.addBook(new DetectiveBook("Артур Конан Дойл", "Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе", 2019, 1008));
+myLibrary.addBook(new FantasticBook("Аркадий и Борис Стругацкие", "Пикник на обочине", 1972, 168));
+myLibrary.addBook(new NovelBook("Герберт Уэллс", "Машина времени", 1895, 138));
+myLibrary.addBook(new Magazine("Мурзилка", 1924, 60));
+myLibrary.addBook(new Book("Александр Сергеевич Пушкин", "Сказки", 1919, 123));
+console.log(myLibrary.books);
+console.log(myLibrary.findBookBy('releaseDate', 1919));
+const takingBook = myLibrary.giveBookByName('Пикник на обочине');
+console.log(takingBook);
+console.log(myLibrary.books);
+takingBook.state = 20;
+console.log(takingBook.state);
+myLibrary.addBook(takingBook);
+console.log(myLibrary.addBook(takingBook));
+takingBook.fix();
+console.log(myLibrary.addBook(takingBook));
+takingBook.fix();
+console.log(myLibrary.addBook(takingBook));
+console.log(myLibrary.books);
+
 class StudentLog {
     constructor(name) {
         this.name = name
@@ -157,24 +178,3 @@ class StudentLog {
         return (sum / counter) || 0;
     }
 }
-
-const myLibrary = new Library('Моя библиотека');
-myLibrary.addBook(new DetectiveBook("Артур Конан Дойл", "Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе", 2019, 1008));
-myLibrary.addBook(new FantasticBook("Аркадий и Борис Стругацкие", "Пикник на обочине", 1972, 168));
-myLibrary.addBook(new NovelBook("Герберт Уэллс", "Машина времени", 1895, 138));
-myLibrary.addBook(new Magazine("Мурзилка", 1924, 60));
-myLibrary.addBook(new Book("Александр Сергеевич Пушкин", "Сказки", 1919, 123));
-console.log(myLibrary.books);
-console.log(myLibrary.findBookBy('releaseDate', 1919));
-const takingBook = myLibrary.giveBookByName('Пикник на обочине');
-console.log(takingBook);
-console.log(myLibrary.books);
-takingBook.state = 20;
-console.log(takingBook.state);
-myLibrary.addBook(takingBook);
-console.log(myLibrary.addBook(takingBook));
-takingBook.fix();
-console.log(myLibrary.addBook(takingBook));
-takingBook.fix();
-console.log(myLibrary.addBook(takingBook));
-console.log(myLibrary.books);

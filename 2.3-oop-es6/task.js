@@ -113,12 +113,12 @@ console.log(myLibrary.books);
 
 class StudentLog {
     constructor(name) {
-        this.name = name
+        this.name = name;
         this.marks = [];
     }
 
     getName() {
-        return this.name
+        return this.name;
     }
 
     getIndexOfSubject(subject) {
